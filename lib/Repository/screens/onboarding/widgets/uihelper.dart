@@ -48,12 +48,12 @@ class UiHelper {
           ),
         ),
         child: Text(
-            buttonname,
-            style: TextStyle(
+          buttonname,
+          style: TextStyle(
             fontSize: 16,
             color: Colors.white,
             fontWeight: FontWeight.bold,
-            fontFamily: "bold"
+            fontFamily: "bold",
           ),
         ),
       ),
@@ -65,29 +65,34 @@ class UiHelper {
     required String text,
     required TextInputType textinputtype,
     required BuildContext context,
+    required IconData icondata,
   }) {
     return Container(
       height: 36,
-      width: 327,
+      width: 360,
       decoration: BoxDecoration(
         color:
             Theme.of(context).brightness == Brightness.dark
                 ? AppColor.containerdarkmode
                 : AppColor.containerlightmode,
-      borderRadius: BorderRadius.circular(7)
+        borderRadius: BorderRadius.circular(7),
       ),
-      child: Padding(
-          padding: const EdgeInsets.only(left: 10),
-          child: TextField(
-            controller: controller,
-            keyboardType: textinputtype,
-            decoration: InputDecoration(
-            hintText: text,
-            hintStyle: TextStyle(color: Theme.of(context).brightness==Brightness.dark?AppColor.hintdarkmode:AppColor.hintlightmode,fontSize: 14),
-            border: InputBorder.none
+      child: TextField(
+        controller: controller,
+        keyboardType: textinputtype,
+        decoration: InputDecoration(
+          hintText: text,
+          prefix: Icon(icondata, color: AppColor.iconlight),
+          hintStyle: TextStyle(
+            color:
+                Theme.of(context).brightness == Brightness.dark
+                    ? AppColor.hintdarkmode
+                    : AppColor.hintlightmode,
+            fontSize: 14,
+          ),
+          border: InputBorder.none,
         ),
       ),
-    ),
     );
   }
 }

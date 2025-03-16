@@ -1,9 +1,10 @@
 # chatapp
 
-A First Flutter project.
-Chat App (UI)
+A First Flutter project. Chat App (UI)
+
 <br>
-Aditya Adarsh
+ by Aditya Adarsh 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.

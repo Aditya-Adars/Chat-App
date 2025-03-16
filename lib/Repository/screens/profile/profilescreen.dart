@@ -1,4 +1,5 @@
 import 'package:chatapp/Domain/Constants/appcolors.dart';
+import 'package:chatapp/Repository/screens/bottomnav/bottomnavigationscreen.dart';
 import 'package:chatapp/Repository/screens/onboarding/widgets/uihelper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,19 +43,27 @@ class ProfileScreen extends StatelessWidget {
               controller: firstnameController,
               text: "First Name (Required)",
               textinputtype: TextInputType.name,
-              context: context,
+              context: context,icondata: Icons.person
             ),
             UiHelper.CustumTextField(
               controller: secondnameController,
               text: "Last Name (Required)",
               textinputtype: TextInputType.name,
-              context: context,
+              context: context, icondata: CupertinoIcons.person_2
             ),
           ],
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: UiHelper.CustumButton(buttonname: "Save", callback: (){}),
+      floatingActionButton: UiHelper.CustumButton(
+        buttonname: "Save",
+        callback: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => BottomNavScreen()),
+          );
+        },
+      ),
     );
   }
 }
